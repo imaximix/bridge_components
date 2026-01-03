@@ -1,0 +1,1 @@
+[![](https://www.jitpack.io/v/imaximix/bridge_components.svg)](https://www.jitpack.io/#imaximix/bridge_components)
