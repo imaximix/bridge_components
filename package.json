@@ -1,0 +1,28 @@
+{
+  "name": "@imaximix/bridge_components",
+  "version": "1.1.0",
+  "description": "Bridge Components for Hotwire Native",
+  "main": "./js/controllers/index.js",
+  "files": [
+    "./js/controllers/*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imaximix/bridge_components.git"
+  },
+  "keywords": [
+    "bridge",
+    "components",
+    "hotwire",
+    "native"
+  ],
+  "author": "Maximilian Babescu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imaximix/bridge_components/issues"
+  },
+  "homepage": "https://github.com/imaximix/bridge_components#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
