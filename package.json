@@ -2,9 +2,15 @@
   "name": "@imaximix/bridge_components",
   "version": "1.1.1",
   "description": "Bridge Components for Hotwire Native",
+  "type": "module",
   "main": "./js/controllers/index.js",
+  "module": "./js/controllers/index.js",
+  "exports": {
+    ".": "./js/controllers/index.js",
+    "./js/controllers/*": "./js/controllers/*"
+  },
   "files": [
-    "./js/controllers/*.js"
+    "js"
   ],
   "repository": {
     "type": "git",
