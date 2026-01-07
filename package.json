@@ -3,15 +3,14 @@
   "version": "1.1.1",
   "description": "Bridge Components for Hotwire Native",
   "type": "module",
-  "main": "./js/controllers/index.js",
-  "module": "./js/controllers/index.js",
-  "exports": {
-    ".": "./js/controllers/index.js",
-    "./js/controllers/*": "./js/controllers/*"
-  },
+  "main": "./dist/index.js",
   "files": [
-    "js"
+    "dist"
   ],
+  "scripts": {
+    "build": "esbuild js/controllers/index.js --bundle --format=esm --outfile=dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imaximix/bridge_components.git"
@@ -30,5 +29,8 @@
   "homepage": "https://github.com/imaximix/bridge_components#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.2"
   }
 }
