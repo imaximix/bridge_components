@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "esbuild js/controllers/index.js --bundle --format=esm --outfile=dist/index.js",
+    "build": "esbuild js/controllers/index.js --bundle --format=esm --outfile=dist/index.js --packages=external",
     "prepublishOnly": "npm run build"
   },
   "repository": {
