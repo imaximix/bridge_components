@@ -34,6 +34,7 @@
     "esbuild": "^0.27.2"
   },
   "peerDependencies": {
-    "@hotwired/hotwire-native-bridge": ">=1.2.2"
+    "@hotwired/hotwire-native-bridge": ">=1.2.2",
+    "@hotwired/stimulus": ">=3.2.2"
   }
 }
