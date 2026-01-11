@@ -8,9 +8,9 @@
 import UIKit
 import HotwireNative
 
-class TabBarComponent: BridgeComponent {
+open class TabBarComponent: BridgeComponent {
     
-    override nonisolated static var name: String { "tab-bar" }
+    override nonisolated static public var name: String { "tab-bar" }
     let identifier: UUID = UUID()
     
     private var viewController: UIViewController? {
@@ -21,7 +21,7 @@ class TabBarComponent: BridgeComponent {
         viewController?.tabBarController as? HotwireTabBarController
     }
     
-    override func onReceive(message: Message) {
+    override public func onReceive(message: Message) {
         guard let data: MessageData = message.data() else { return }
         guard let tabBarController else { return }
         guard let rootURL = BridgeComponentsConfiguration.rootUrl else { return }
