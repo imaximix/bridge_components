@@ -48,9 +48,13 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.datastore.preferences)
     implementation(libs.hotwire.core)
     implementation(libs.hotwire.navigation.fragments)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.coroutines)
+    implementation(libs.google.tink)
+
 
 
     testImplementation(libs.junit)
