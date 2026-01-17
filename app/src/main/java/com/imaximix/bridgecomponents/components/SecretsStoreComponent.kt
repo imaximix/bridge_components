@@ -1,4 +1,4 @@
-package com.imaximix.bridgecomponents.com.imaximix.bridgecomponents.components
+package com.imaximix.bridgecomponents.components
 
 import android.content.Context
 import com.imaximix.geovote.SecureStorage
