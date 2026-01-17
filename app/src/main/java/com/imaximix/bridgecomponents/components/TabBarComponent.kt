@@ -49,7 +49,7 @@ class TabBarComponent(
         // Handle incoming messages based on the message `event`.
         when (message.event) {
             "connect" -> handleConnectEvent(message)
-            else -> Log.w("ButtonComponent", "Unknown event for message: $message")
+            else -> Log.w("TabBarComponent", "Unknown event for message: $message")
         }
     }
 
