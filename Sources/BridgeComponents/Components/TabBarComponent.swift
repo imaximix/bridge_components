@@ -28,9 +28,10 @@ open class TabBarComponent: BridgeComponent {
         guard let tabBarController else { return }
         guard let rootURL = BridgeComponentsConfiguration.rootUrl else { return }
         
-        if tabBarController.viewControllers?.count != data.tabs.count {
+        
+        if shouldReloadTabs(newTabs: data.tabs) {
             let hotwireTabs = data.tabs.map { tab in
-                HotwireTab(title: tab.name, image: UIImage(systemName: tab.imageName)!, url: rootURL.appendingPathComponent(tab.path))
+                HotwireTab(id: tab.path, title: tab.name, image: UIImage(systemName: tab.imageName)!, url: rootURL.appendingPathComponent(tab.path))
             }
             
             tabBarController.load(hotwireTabs)
@@ -39,6 +40,17 @@ open class TabBarComponent: BridgeComponent {
             NotificationCenter.default.post(name: NSNotification.Name("WebViewReload"), object: nil, userInfo: ["identifier": identifier])
         }
     }
+    
+    private func shouldReloadTabs(newTabs: [Tab]) -> Bool {
+        guard let tabBarController else { return false }
+        
+        if #available(iOS 18.0, *) {
+            return tabBarController.tabs.count != newTabs.count
+        } else {
+            return tabBarController.viewControllers?.count != newTabs.count
+        }
+    }
+    
 }
 
 private extension TabBarComponent {
