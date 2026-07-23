@@ -30,7 +30,7 @@ open class TabBarComponent: BridgeComponent {
         
         if tabBarController.viewControllers?.count != data.tabs.count {
             let hotwireTabs = data.tabs.map { tab in
-                HotwireTab(id: tab.path, title: tab.name, image: UIImage(systemName: tab.imageName)!, url: rootURL.appendingPathComponent(tab.path))
+                HotwireTab(title: tab.name, image: UIImage(systemName: tab.imageName)!, url: rootURL.appendingPathComponent(tab.path))
             }
             
             tabBarController.load(hotwireTabs)
