@@ -13,13 +13,7 @@ open class TabBarComponent: BridgeComponent {
     override nonisolated static public var name: String { "tab-bar" }
     let identifier: UUID = UUID()
     
-    private var viewController: UIViewController? {
-        delegate?.destination as? UIViewController
-    }
-    
     private var tabBarController: HotwireTabBarController? {
-        
-        
         viewController?.tabBarController as? HotwireTabBarController
     }
     
@@ -27,7 +21,6 @@ open class TabBarComponent: BridgeComponent {
         guard let data: MessageData = message.data() else { return }
         guard let tabBarController else { return }
         guard let rootURL = BridgeComponentsConfiguration.rootUrl else { return }
-        
         
         if shouldReloadTabs(newTabs: data.tabs) {
             let hotwireTabs = data.tabs.map { tab in
