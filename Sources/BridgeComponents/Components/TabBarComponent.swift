@@ -37,11 +37,19 @@ open class TabBarComponent: BridgeComponent {
     private func shouldReloadTabs(newTabs: [Tab]) -> Bool {
         guard let tabBarController else { return false }
         
-        if #available(iOS 18.0, *) {
-            return tabBarController.tabs.count != newTabs.count
+        let countDifferent = if #available(iOS 18.0, *) {
+            tabBarController.tabs.count != newTabs.count
         } else {
-            return tabBarController.viewControllers?.count != newTabs.count
+            tabBarController.viewControllers?.count != newTabs.count
         }
+        
+        let idsDifferent = if #available(iOS 18.0, *) {
+            zip(tabBarController.tabs.map(\.identifier), newTabs.map(\.path)).contains(where: { $0 != $1 })
+        } else {
+            false
+        }
+        
+        return countDifferent || idsDifferent
     }
     
 }
